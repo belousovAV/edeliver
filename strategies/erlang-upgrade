@@ -139,7 +139,7 @@ run() {
         && __verbose "${txtgrn}Using version $_installed_release_version from release store for building the upgrade${txtrst}" \
         || __verbose "Version $_installed_release_version not found in release store"
       [[ -n "$WITH" ]] \
-        || [[ -n "$_revision_from_version" && FROM="$_revision_from_version" ]] \
+        || [[ -n "$_revision_from_version" ]] && FROM="$_revision_from_version" \
         || FROM="$_version_without_revision"
       # actual build process <-----------------------------------------------------------------------------------------
       status "Building the upgrade from version $_installed_release_version"
